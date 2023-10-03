@@ -1,7 +1,22 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const HCCheader = () => {
+  const pathName = usePathname();
+
+  const [isActive, setIsActive] = useState(false);
+
+  const ToggleClass = () => {
+    setIsActive(!isActive);
+    if (isActive) {
+      document.querySelector("body").style.overflow = "visible";
+    } else {
+      document.querySelector("body").style.overflow = "hidden";
+    }
+  };
+
   return (
     <>
       <div class="stickyHeader w-100 bgWhite">
@@ -13,7 +28,7 @@ const HCCheader = () => {
             role="link"
             href="#SkipToMain"
             tabindex="0"
-            style={{visibility: "visible"}}
+            style={{ visibility: "visible" }}
           >
             Skip to main content
           </Link>
@@ -23,8 +38,16 @@ const HCCheader = () => {
             <div class="firstheader order-2 d-block d-lg-none">
               <div class="col-12">
                 <div class="row justify-content-end bgSecondary">
-                  <div class="mobileNavHeader align-self-center py-1 px-3">
-                    <div class="d-inline-flex" id="mobileNavButton">
+                  <div
+                    class={`mobileNavHeader align-self-center py-1 px-3 ${
+                      isActive ? "active" : null
+                    }`}
+                  >
+                    <div
+                      class="d-inline-flex"
+                      id="mobileNavButton"
+                      onClick={ToggleClass}
+                    >
                       <div class="txtWhite text-uppercase mt-1">
                         <span class="m-fs20 menu-text ArialBold">MENU</span>
                         <span class="m-fs20 close-text ArialBold">Close</span>
@@ -39,7 +62,7 @@ const HCCheader = () => {
                           src="/images/new-close-icon.png"
                           class="close-icon"
                           alt=""
-                          style={{width:"20px"}}
+                          style={{ width: "20px" }}
                         />
                       </div>
                     </div>
@@ -48,7 +71,6 @@ const HCCheader = () => {
                 <div class="row py-2 mt-1">
                   <div class="col-7 pr-0 pl-3">
                     <div class="">
-                      
                       <img
                         src="/images/merckaccess_logo.svg"
                         class="d-block d-lg-none logoTwo"
@@ -91,7 +113,9 @@ const HCCheader = () => {
                       </Link>
                     </div>
                     <div
-                      class="text-right px-2 pl-5 mfs12_mlh15 pt-2 pb-1"
+                      class={`text-right px-2 pl-5 mfs12_mlh15 pt-2 pb-1 ${
+                        pathName == "/hcp" ? "mainActive" : ""
+                      }`}
                       id="mobileHeaderOne"
                     >
                       <Link
@@ -106,7 +130,17 @@ const HCCheader = () => {
                       </Link>
                     </div>
                     <div
-                      class="text-right px-2 pl-5 mfs12_mlh15 pt-2 pb-1 mb-0"
+                      class={`text-right px-2 pl-5 mfs12_mlh15 pt-2 pb-1 mb-0 
+                      ${
+                        pathName == "/hcc" ? "mainActive" : ""
+                      } 
+                      
+                      ${
+                        pathName == "/hcc/support-resources" ? "mainActive" : ""
+                      } 
+                      
+                      ${pathName == "/hcc/enrollnow" ? "mainActive" : ""}`}
+                      
                       id="mobileHeaderTwo"
                     >
                       <Link
@@ -154,7 +188,11 @@ const HCCheader = () => {
                     </span>
                   </p>
                 </div>
-                <div class="isSelected" id="mobileNavigation">
+                <div
+                  class={`isSelected ${isActive ? "active" : null}`}
+                  id="mobileNavigation"
+                  onClick={ToggleClass}
+                >
                   <div class="row">
                     <div class="col-12 px-0">
                       <div class="col-12 col-lg-11 px-0">
@@ -186,7 +224,7 @@ const HCCheader = () => {
                             </div>
                             <div
                               class="col-12 col-lg-4 px-0 mobOnly"
-                              style={{background:"#deeaeb"}}
+                              style={{ background: "#deeaeb" }}
                             >
                               <p class="txtTeal text-center mb-0 mfs18_mlh22 py-3 px-4 ">
                                 Contact The Merck Access Program{" "}
@@ -329,11 +367,11 @@ const HCCheader = () => {
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul
                     class="navbar-nav col-lg-12"
-                    style={{padding: "0 105px 0 24px"}}
+                    style={{ padding: "0 105px 0 24px" }}
                   >
                     <li
                       class="px-lg-0 nav-item bgSecondary text-center hccMenuLinkOne col-lg-1 mx-1"
-                      style={{maxWidth:"65px"}}
+                      style={{ maxWidth: "65px" }}
                     >
                       <Link
                         class="nav-lin nav-link text-white  m-fs11 mfs20_mlh26 text-center"
@@ -346,7 +384,11 @@ const HCCheader = () => {
                         <img src="/images/new-home.png" alt="" />
                       </Link>
                     </li>
-                    <li class="px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-0 hccMenuLinkThree">
+                    <li
+                      class={`px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-0 hccMenuLinkThree ${
+                        pathName == "/hcc" ? "bgDarkActive1" : ""
+                      }`}
+                    >
                       <Link
                         class="nav-link nav-link text-white fs22_lh24 text-center py-lg-3"
                         href="/hcc/"
@@ -358,7 +400,13 @@ const HCCheader = () => {
                         The Merck Access Program
                       </Link>
                     </li>
-                    <li class="px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-1 hccMenuLinkFour">
+                    <li
+                      class={`px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-1 hccMenuLinkFour ${
+                        pathName == "/hcc/support-resources"
+                          ? "bgDarkActive1"
+                          : ""
+                      }`}
+                    >
                       <Link
                         class="nav-link nav-link text-white fs22_lh24 text-center py-lg-3"
                         href="/hcc/support-resources/"
@@ -376,11 +424,11 @@ const HCCheader = () => {
               <div class="navbar-collapse">
                 <ul
                   class="navbar-nav col-lg-12"
-                  style={{padding: "2px 32px 0 24px"}}
+                  style={{ padding: "2px 32px 0 24px" }}
                 >
                   <li
                     class="nav-item   col-lg-12 mx-1 text-center  py-2 py-lg-3 mt-0 mb-0 px-3 px-lg-1  txtTeal mt-lg-1 mfs15_mlh18 fs22_lh24"
-                    style={{background: "#deeaeb"}}
+                    style={{ background: "#deeaeb" }}
                   >
                     Contact The Merck Access Program{" "}
                     <span class="nowrap ArialBold txtPrimary">

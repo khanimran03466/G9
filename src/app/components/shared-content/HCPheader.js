@@ -1,7 +1,22 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
-const HCPheader = ({pathName}) => {
+const HCPheader = () => {
+  const pathName = usePathname();
 
+  const [isActive, setIsActive] = useState(false);
+
+  const ToggleClass = () => {
+    setIsActive(!isActive);
+    if (isActive) {
+      document.querySelector("body").style.overflow = "visible";
+    } else {
+      document.querySelector("body").style.overflow = "hidden";
+    }
+  };
 
   return (
     <>
@@ -14,7 +29,7 @@ const HCPheader = ({pathName}) => {
             role="link"
             href="#SkipToMain"
             tabindex="0"
-            style={{visibility: "visible"}}
+            style={{ visibility: "visible" }}
           >
             Skip to main content
           </Link>
@@ -24,8 +39,16 @@ const HCPheader = ({pathName}) => {
             <div className="firstheader order-2 d-block d-lg-none">
               <div className="col-12">
                 <div className="row justify-content-end bgSecondary">
-                  <div className="mobileNavHeader align-self-center py-1 px-3">
-                    <div className="d-inline-flex" id="mobileNavButton">
+                  <div
+                    className={`mobileNavHeader align-self-center py-1 px-3 ${
+                      isActive ? "active" : null
+                    }`}
+                  >
+                    <div
+                      className="d-inline-flex"
+                      id="mobileNavButton"
+                      onClick={ToggleClass}
+                    >
                       <div className="txtWhite text-uppercase mt-1">
                         <span className="m-fs20 menu-text ArialBold">MENU</span>
                         <span className="m-fs20 close-text ArialBold">
@@ -34,15 +57,15 @@ const HCPheader = ({pathName}) => {
                       </div>
                       <div className="m-fs26 pl-2 pt-1 d-flex align-self-center justify-content-center txtWhite">
                         <img
-                          src="images/new-menu-bar.png"
+                          src="/images/new-menu-bar.png"
                           className="menu-bar"
                           alt=""
                         />
                         <img
-                          src="images/new-close-icon.png"
+                          src="/images/new-close-icon.png"
                           className="close-icon"
                           alt=""
-                          style={{width:"20px"}}
+                          style={{ width: "20px" }}
                         />
                       </div>
                     </div>
@@ -52,7 +75,7 @@ const HCPheader = ({pathName}) => {
                   <div className="col-7 pr-0 pl-3">
                     <div className="">
                       <img
-                        src="images/merckaccess_logo.svg"
+                        src="/images/merckaccess_logo.svg"
                         className="d-block d-lg-none logoTwo"
                         alt=""
                       />
@@ -60,7 +83,7 @@ const HCPheader = ({pathName}) => {
                     <div className="pt-4">
                       {/* <!--  <Link role="link" tabindex="0" aria-label="" className="navbar-brand py-0 disabled" href="/hcp/"> --> */}
                       <img
-                        src="images/gardasil9Logo.svg"
+                        src="/images/gardasil9Logo.svg"
                         alt=""
                         className="img-fluid logo mt-0"
                       />
@@ -95,7 +118,17 @@ const HCPheader = ({pathName}) => {
                       </Link>
                     </div>
                     <div
-                      className="text-right px-2 pl-5 mfs12_mlh15 pt-2 pb-1"
+                      className={`text-right px-2 pl-5 mfs12_mlh15 pt-2 pb-1 ${
+                        pathName == "/hcp" ? "mainActive" : ""
+                      } ${
+                        pathName == "/hcp/forms-and-documentation"
+                          ? "mainActive"
+                          : ""
+                      } ${
+                        pathName == "/hcp/enrollnow"
+                          ? "mainActive"
+                          : ""
+                      }`}
                       id="mobileHeaderOne"
                     >
                       <Link
@@ -110,7 +143,9 @@ const HCPheader = ({pathName}) => {
                       </Link>
                     </div>
                     <div
-                      className="text-right px-2 pl-5 mfs12_mlh15 pt-2 mb-0"
+                      className={`text-right px-2 pl-5 mfs12_mlh15 pt-2 mb-0 ${
+                        pathName == "/hcc" ? "mainActive" : ""
+                      }`}
                       id="mobileHeaderTwo"
                     >
                       <Link
@@ -158,7 +193,11 @@ const HCPheader = ({pathName}) => {
                     </span>
                   </p>
                 </div>
-                <div className="isSelected" id="mobileNavigation">
+                <div
+                  className={`isSelected ${isActive ? "active" : null}`}
+                  id="mobileNavigation"
+                  onClick={ToggleClass}
+                >
                   <div className="row">
                     <div className="col-12 px-0">
                       <div className="col-12 col-lg-11 px-0">
@@ -190,7 +229,7 @@ const HCPheader = ({pathName}) => {
                             </div>
                             <div
                               className="col-12 col-lg-4 px-0 mobOnly"
-                              style={{background:"#deeaeb"}}
+                              style={{ background: "#deeaeb" }}
                             >
                               <p className="txtTeal text-center mb-0 mfs18_mlh22 py-3 px-4 ">
                                 Contact The Merck Access Program{" "}
@@ -220,10 +259,11 @@ const HCPheader = ({pathName}) => {
                 <div className="container-fluid">
                   <div className="row">
                     <div className="col-md-5  px-lg-4">
-                      <span
-                        className="pr-2 borderRight"
-                      >
-                        <span className="p-3 p-xl-3 p-lg-2 mainActive" id="hcpmainlinkOne">
+                      <span className="pr-2 borderRight">
+                        <span
+                          className="p-3 p-xl-3 p-lg-2 mainActive"
+                          id="hcpmainlinkOne"
+                        >
                           <Link
                             role="link"
                             tabindex="0"
@@ -290,7 +330,7 @@ const HCPheader = ({pathName}) => {
                   <div className="row mb-2 mb-lg-0 px-lg-4">
                     <div className="col-md-5 mb-lg-2 px-0 align-self-center align-self-lg-end">
                       <img
-                        src="images/merckaccess_logo.svg"
+                        src="/images/merckaccess_logo.svg"
                         className="d-none d-lg-block logoTwo"
                         alt=""
                       />
@@ -299,7 +339,7 @@ const HCPheader = ({pathName}) => {
                       <div className="pt-2 col-md-12 mx-auto pb-1 pb-lg-0 align-self-center">
                         {/* <!--  <Link role="link" tabindex="0" aria-label="" className="navbar-brand m-0 py-0 disabled" href="/hcp/"> --> */}
                         <img
-                          src="images/gardasil9Logo.svg"
+                          src="/images/gardasil9Logo.svg"
                           alt=""
                           className="img-fluid m-0 logo mt-2"
                         />
@@ -337,11 +377,11 @@ const HCPheader = ({pathName}) => {
                 >
                   <ul
                     className="navbar-nav col-lg-12"
-                    style={{padding: "0 105px 0 24px"}}
+                    style={{ padding: "0 105px 0 24px" }}
                   >
                     <li
                       className="px-lg-0 nav-item bgSecondary text-center hcpMenuLinkOne col-lg-1 mx-1 "
-                      style={{maxWidth:"65px"}}
+                      style={{ maxWidth: "65px" }}
                     >
                       <Link
                         className="nav-lin nav-link text-white  m-fs11 mfs20_mlh26 text-center"
@@ -351,10 +391,14 @@ const HCPheader = ({pathName}) => {
                         aria-label="Home-icon"
                         data-design-category="top_nav_vd"
                       >
-                        <img src="images/new-home.png" alt="" />
+                        <img src="/images/new-home.png" alt="" />
                       </Link>
                     </li>
-                    <li className="px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-0 hcpMenuLinkTwo ">
+                    <li
+                      className={`px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-0 hcpMenuLinkTwo ${
+                        pathName == "/hcp" ? "bgDarkActive1" : ""
+                      }`}
+                    >
                       <Link
                         className="nav-link nav-link text-white fs22_lh24 text-center py-lg-3"
                         href="/hcp/"
@@ -366,10 +410,16 @@ const HCPheader = ({pathName}) => {
                         The Merck Access Program
                       </Link>
                     </li>
-                    <li className="px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-1 hcpMenuLinkThree">
+                    <li
+                      className={`px-lg-0 nav-item bgSecondary text-center col-lg-6 mx-1 hcpMenuLinkThree ${
+                        pathName == "/hcp/forms-and-documentation"
+                          ? "bgDarkActive1"
+                          : ""
+                      }`}
+                    >
                       <Link
                         className="nav-link nav-link text-white fs22_lh24 text-center py-lg-3"
-                        href="/hcp/forms-and-documentation/"
+                        href="/hcp/forms-and-documentation"
                         role="link"
                         tabindex="0"
                         aria-label="Resources"
@@ -384,11 +434,11 @@ const HCPheader = ({pathName}) => {
               <div className="navbar-collapse">
                 <ul
                   className="navbar-nav col-lg-12"
-                  style={{padding: "2px 32px 0 24px"}}
+                  style={{ padding: "2px 32px 0 24px" }}
                 >
                   <li
                     className="nav-item   col-lg-12 mx-1 text-center  py-2 py-lg-3 mt-0 mb-0 px-3 px-lg-1  txtTeal mt-lg-1 mfs15_mlh18 fs22_lh24"
-                    style={{background: "#deeaeb"}}
+                    style={{ background: "#deeaeb" }}
                   >
                     Contact The Merck Access Program{" "}
                     <span className="nowrap ArialBold txtPrimary">

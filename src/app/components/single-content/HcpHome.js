@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const HcpHome = () => {
   return (
@@ -28,8 +29,7 @@ const HcpHome = () => {
                   <img className="w-100" src="/images/new-lady.png" alt="" />
                 </picture>
                 <div
-                  className="col-12 px-1 d-lg-none py-2"
-                  style={{bottom: "152px !important;"}}
+                  className="col-12 px-1 d-lg-none py-2 mobile-bottom-140"
                 >
                   <p className="col-7 mfs29_mlh31 txtTeal ArialBold position-absolute mb-0 ">
                     HOW MAY WE ASSIST YOU?
@@ -73,7 +73,7 @@ const HcpHome = () => {
                     855-210-1965
                   </p>
                   <div className="px-0 col-lg-6 py-3">
-                    <a
+                    <Link
                       href="/hcp/enrollnow/"
                       role="link"
                       tabindex="0"
@@ -88,7 +88,7 @@ const HcpHome = () => {
                       >
                         ENROLL NOW
                       </button>
-                    </a>
+                    </Link>
                   </div>
                   <p className="mb-3 mb-lg-0 px-0 pr-3 pr-lg-5 col-12 col-lg-8 txtGrey mfs15_mlh18 fs20_lh22">
                     If you are uninsured or unable to afford your medication,

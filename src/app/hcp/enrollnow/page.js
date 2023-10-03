@@ -1,6 +1,8 @@
-import Enrollnow from "@/app/components/single-content/HCP/Enrollnow"
+
+import Enrollnow from "@/app/components/single-content/HCP/Enrollnow";
 
 const page = () => {
+
   return (
     <>
         <Enrollnow />

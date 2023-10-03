@@ -46,14 +46,11 @@ const formAndDocumentation = () => {
                             </div>
                             <div className="col-lg-3 col-3 px-0 rightsection d-flex justify-content-center px-0 rightsection text-center">
                               <div className="align-self-center">
-                                {/* <!--<Link href="https://powerforms.docusign.net/c4eaa580-6962-4591-b662-ac39bb578e3d?env=na1&accountId=4d2500a8-dc5d-4877-b72f-6629d6c93303&recipientLang=en2" target="_blank"
-                            className="" data-design-category="button_vd" role="link" tabindex="0" aria-label="">--> */}
+                               
                                 <Link
-                                  className=""
-                                  target="_blank"
                                   href="javascript:void(0)"
-                                  data-toggle="modal"
-                                  data-target="#leaveElectonic-hcp"
+                                  data-href="https://www.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1555d71d-bebb-4385-96a4-ce3824de4fc7&env=na1&acct=4d2500a8-dc5d-4877-b72f-6629d6c93303&v=2"
+                                  data-target="#leaveElectonic"
                                   data-design-category="button_vd"
                                 >
                                   <img
@@ -116,9 +113,9 @@ const formAndDocumentation = () => {
                                 {/* <!--  <Link target="_blank" href="#" className="" data-design-category="button_vd" role="link" tabindex="0" aria-label=""><img src="/images/new-DarkArrow.png"
                               alt="" className="w-md-50 w-lg-75" /></Link> --> */}
                                 <Link
-                                  className="externalsite"
-                                  target="_blank"
-                                  href="https://hubconnect.mckesson.com/8x52jhdfp92851merck"
+                                  href="javascript:voild(0)"
+                                  data-href="https://hubconnect.mckesson.com/8x52jhdfp92851merck"
+                                  data-target="#leaveElectonic"
                                 >
                                   <img
                                     src="/images/new-DarkArrow.png"

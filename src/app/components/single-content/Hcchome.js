@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import hcc_banner from "./../../../../public/images/hcc_banner.png";
+// import hcc_banner from "./../../../../public/images/hcc_banner.png";
 
 const Hcchome = () => {
   return (
@@ -11,13 +10,12 @@ const Hcchome = () => {
           <div className="row no-gutters">
             <div className="col-12 position-relative">
               <div className="row no-gutters align-items-center flex-row-reverse pt-lg-2">
-                {/* <img className="w-100 imgHeight" src="/images/hcc_banner.png" alt="" /> */}
-                <Image className="w-100 imgHeight" src={hcc_banner} alt="" />
+                <img className="w-100 imgHeight" src="/images/hcc_banner.png" alt="" />
+                {/* <img className="w-100 imgHeight" src={hcc_banner} alt="" /> */}
                 <div
-                  className="col-12 px-1 d-lg-none py-2"
-                  style={{ bottom: "140px !important" }}
+                  className="col-12 px-1 d-lg-none py-2 mobile-bottom-140"
                 >
-                  <p className="col-6 mfs28_mlh30 txtTeal ArialBold position-absolute mb-0 ">
+                  <p className="col-6 mfs28_mlh30 txtTeal ArialBold position-absolute mb-0" >
                     HOW MAY WE ASSIST YOU?
                   </p>
                 </div>

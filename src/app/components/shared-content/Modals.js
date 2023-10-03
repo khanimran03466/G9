@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Modals = () => {
   const router = useRouter();
+  const pathName = usePathname();
 
   useEffect(() => {
     if (!sessionStorage.getItem("alradyVisited")) {
@@ -39,7 +41,45 @@ const Modals = () => {
         router.push("/hcc/");
       }
     });
-  }, []);
+
+    // Leave Modals popups js
+
+    const leavePopup = document.querySelector("#leaveElectonic-hcp");
+    const bgShaddow = document.querySelector(".modal-backdrop");
+
+    const yesLeavePopup = document.querySelector(".yesLeaveElehcp");
+    const noLeavePopup = document.querySelector(".noLeaveElehcp");
+
+    function showLeavePopup() {
+      bgShaddow.classList.add("show");
+      leavePopup.classList.add("show");
+    }
+
+    function hideLeavePopup() {
+      bgShaddow.classList.remove("show");
+      leavePopup.classList.remove("show");
+    }
+
+    document
+      .querySelectorAll("[data-target='#leaveElectonic']")
+      .forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const url = e.currentTarget.getAttribute("data-href");
+          yesLeavePopup.setAttribute("href", url);
+          showLeavePopup();
+        });
+      });
+
+    // No leave button
+
+    noLeavePopup.addEventListener("click", () => {
+      hideLeavePopup();
+    });
+
+    yesLeavePopup.addEventListener("click", () => {
+      hideLeavePopup();
+    });
+  }, [pathName]);
 
   return (
     <>
@@ -136,19 +176,19 @@ const Modals = () => {
                   </p>
                 </div>
                 <div className="col-12 text-center py-3 py-lg-4">
-                  <a
+                  <Link
                     className="yesLeavehcp  mr-0 mr-lg-1 mfs18_mlh22 fs32_lh38 txtWhite px-5 p-1 yesHover"
                     href="javascript:void(0)"
                   >
                     YES
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="noLeavehcp bgSky mfs18_mlh22 fs32_lh38 txtWhite px-5 p-1 noHover"
                     data-mdb-dismiss="modal"
                     href="javascript:void(0)"
                   >
                     NO
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -182,19 +222,19 @@ const Modals = () => {
                   </p>
                 </div>
                 <div className="col-12 text-center py-3 py-lg-4">
-                  <a
+                  <Link
                     className="yesLeavehcc mr-0 mr-lg-1 mfs18_mlh22 fs32_lh38 txtWhite px-5 p-1 yesHover"
                     href="javascript:void(0)"
                   >
                     YES
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="noLeavehcc bgSky ml-0 mfs18_mlh22 fs32_lh38 txtWhite px-5 p-1 noHover"
                     data-mdb-dismiss="modal"
                     href="javascript:void(0)"
                   >
                     NO
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -227,19 +267,20 @@ const Modals = () => {
                   </p>
                 </div>
                 <div className="col-12 text-center py-3 py-lg-4">
-                  <a
+                  <Link
                     className="yesLeaveElehcp mr-0 mr-lg-1 mfs18_mlh22 fs32_lh38 txtWhite px-5 p-1 yesHover"
                     href="javascript:void(0)"
+                    target="_blank"
                   >
                     YES
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="noLeaveElehcp bgSky ml-0 mfs18_mlh22 fs32_lh38 txtWhite px-5 p-1 noHover"
                     data-mdb-dismiss="modal"
                     href="javascript:void(0)"
                   >
                     NO
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

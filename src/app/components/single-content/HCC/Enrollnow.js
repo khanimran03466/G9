@@ -57,11 +57,10 @@ const Enrollnow = () => {
                     </td>
                     <td className="text-center col2 bgGradient">
                       <Link
-                        className=""
-                        target="_blank"
                         href="javascript:void(0)"
+                        data-href="https://powerforms.docusign.net/1a014ccb-449a-45dd-b016-ce2c80e0b763?env=na1&acct=4d2500a8-dc5d-4877-b72f-6629d6c93303&accountId=4d2500a8-dc5d-4877-b72f-6629d6c93303"
                         data-toggle="modal"
-                        data-target="#leavePopHccenroll"
+                        data-target="#leaveElectonic"
                       >
                         <img className="W70" src="/images/new-desk-icon.png" />
                       </Link>
@@ -115,11 +114,10 @@ const Enrollnow = () => {
                 </div>
                 <div className="col-5 btnBgT py-2">
                   <Link
-                    className=""
-                    target="_blank"
                     href="javascript:void(0)"
+                    data-href="https://powerforms.docusign.net/1a014ccb-449a-45dd-b016-ce2c80e0b763?env=na1&acct=4d2500a8-dc5d-4877-b72f-6629d6c93303&accountId=4d2500a8-dc5d-4877-b72f-6629d6c93303"
                     data-toggle="modal"
-                    data-target="#leavePopHccenroll"
+                    data-target="#leaveElectonic"
                   >
                     <img
                       className="W45"

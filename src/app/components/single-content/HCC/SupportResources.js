@@ -49,11 +49,10 @@ const SupportResources = () => {
                                 {/* <!--<Link href="https://powerforms.docusign.net/c4eaa580-6962-4591-b662-ac39bb578e3d?env=na1&accountId=4d2500a8-dc5d-4877-b72f-6629d6c93303&recipientLang=en2" target="_blank"
                             className="" data-design-category="button_vd" role="link" tabindex="0" aria-label="">--> */}
                                 <Link
-                                  className=""
-                                  target="_blank"
                                   href="javascript:void(0)"
+                                  data-href="https://powerforms.docusign.net/1a014ccb-449a-45dd-b016-ce2c80e0b763?env=na1&acct=4d2500a8-dc5d-4877-b72f-6629d6c93303&accountId=4d2500a8-dc5d-4877-b72f-6629d6c93303"
                                   data-toggle="modal"
-                                  data-target="#leavePopHccenroll"
+                                  data-target="#leaveElectonic"
                                 >
                                   <img
                                     src="/images/new-DarkArrow.png"
@@ -85,8 +84,7 @@ const SupportResources = () => {
                                     data-design-category="button_vd"
                                   />
                                 </Link>
-
-                                {/* <!-- <Link className="" target="_blank" href="javascript:void(0)" data-toggle="modal" data-target="#leavePopHccenroll"><img src="/images/new-DarkDownload.png" alt="" className="w-md-50 w-lg-75" data-design-category="button_vd" /></Link> --> */}
+                                
                               </div>
                             </div>
                           </div>

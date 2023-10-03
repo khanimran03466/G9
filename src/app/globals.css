@@ -3772,3 +3772,28 @@ a:hover {
     width: 50% !important;
   }
 }
+
+
+.modal.show {
+  display: block !important;
+}
+
+.mobile-bottom-140{
+  bottom: 140px !important;
+}
+
+#mobileNavigation.active {
+  display: block !important;
+  height: 1000px;
+}
+
+.mobileNavHeader.active .menu-text, .mobileNavHeader.active .menu-bar {
+  display: none;
+
+}
+
+.mobileNavHeader.active .close-text,  .mobileNavHeader.active .close-icon{
+  display: block;
+
+}
+

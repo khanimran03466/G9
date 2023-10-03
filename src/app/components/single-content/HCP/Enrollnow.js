@@ -58,17 +58,12 @@ const Enrollnow = () => {
                     </td>
                     <td className="text-center col2 bgGradient">
                       <Link
-                        className=""
-                        target="_blank"
-                        href="javascript:void(0)"
-                        data-toggle="modal"
-                        data-target="#leaveElectonic-hcp"
+                        href="javascript:volid(0)"
+                        data-href="https://www.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1555d71d-bebb-4385-96a4-ce3824de4fc7&env=na1&acct=4d2500a8-dc5d-4877-b72f-6629d6c93303&v=2"
+                        data-target="#leaveElectonic"
                         data-design-category="button_vd"
                       >
-                        <img
-                          className="W70"
-                          src="/images/new-desk-icon.png"
-                        />
+                        <img className="W70" src="/images/new-desk-icon.png" />
                       </Link>
                       <p className="fs18 pt-2 text-left lh20 txtBlack">
                         This form can be signed and submitted electronically.
@@ -120,16 +115,11 @@ const Enrollnow = () => {
                 </div>
                 <div className="col-5 btnBgT py-2">
                   <Link
-                    className=""
-                    target="_blank"
                     href="javascript:void(0)"
-                    data-toggle="modal"
-                    data-target="#leaveElectonic-hcp"
+                    data-href="https://www.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=1555d71d-bebb-4385-96a4-ce3824de4fc7&env=na1&acct=4d2500a8-dc5d-4877-b72f-6629d6c93303&v=2"
+                    data-target="#leaveElectonic"
                   >
-                    <img
-                      className="W45"
-                      src="/images/new-desk-icon.png"
-                    />
+                    <img className="W45" src="/images/new-desk-icon.png" />
                   </Link>
                 </div>
               </div>
@@ -143,7 +133,7 @@ const Enrollnow = () => {
                 <div className="col-6 mr-1 elcCol py-2">
                   <p
                     className="text-white mb-0 ArialBold m-fs16 m-lh18 pt-1"
-                    style={{textTransform: "uppercase;"}}
+                    style={{ textTransform: "uppercase;" }}
                   >
                     Download &amp; Print
                   </p>
@@ -154,10 +144,7 @@ const Enrollnow = () => {
                     href="/pdf/GARDASIL9-Enrollment-Form.pdf"
                     target="_blank"
                   >
-                    <img
-                      className="W35"
-                      src="/images/new-download-icon.png"
-                    />
+                    <img className="W35" src="/images/new-download-icon.png" />
                   </Link>
                 </div>
               </div>
@@ -182,17 +169,16 @@ const Enrollnow = () => {
               <div className="col-12 col-lg-6 col-xl-5 pt-3 pt-lg-0 px-0 text-center text-lg-center">
                 <Link
                   className="m-fs20 fs26 bold txtgreen upBtn-enroll enrollHover externalsite"
-                  href="https://hubconnect.mckesson.com/8x52jhdfp92851merck"
+                  href="javascript:void(0)"
+                  data-href="https://hubconnect.mckesson.com/8x52jhdfp92851merck"
+                  data-target="#leaveElectonic"
                   data-design-category="button_vd"
                 >
                   <span className="col-7 px-2 text-center graytxt HelvaticaBold">
                     UPLOAD DOCUMENTS
                   </span>{" "}
                   <span className="col-2 px-0">
-                    <img
-                      src="/images/new-upload.png"
-                      className="hcpBtn"
-                    />
+                    <img src="/images/new-upload.png" className="hcpBtn" />
                   </span>
                 </Link>
               </div>

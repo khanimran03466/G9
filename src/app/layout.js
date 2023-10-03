@@ -3,7 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Modals from "./components/shared-content/Modals";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={inter.className} class="base" id="home">
+      <body class="base" id="home">
         {/* <Header /> */}
 
         {children}
