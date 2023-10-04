@@ -179,7 +179,7 @@ const HCPheader = () => {
                       </button>
                     </Link>
                   </div>
-                  <p className="col-12 d-block mobHide text-center mb-0 py-3 mt-0 px-5 Arial txtTeal mfs18_mlh22 fs17_lh22 bgOlive">
+                  <p className={`col-12 d-block mobHide text-center mb-0 py-3 mt-0 px-5 Arial txtTeal mfs18_mlh22 fs17_lh22 bgOlive ${isActive?"active":null}`}>
                     Contact The Merck Access Program{" "}
                     <span className="nowrap ArialBold txtPrimary">
                       Mon-Fri at{" "}

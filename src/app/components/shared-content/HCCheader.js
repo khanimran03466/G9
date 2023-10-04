@@ -174,7 +174,7 @@ const HCCheader = () => {
                       </button>
                     </Link>
                   </div>
-                  <p class="col-12 d-block mobHide text-center mb-0 py-3 mt-0 px-5 Arial txtTeal mfs18_mlh22 fs17_lh22 bgOlive">
+                  <p class={`col-12 d-block mobHide text-center mb-0 py-3 mt-0 px-5 Arial txtTeal mfs18_mlh22 fs17_lh22 bgOlive ${isActive?"active":null}`} >
                     Contact The Merck Access Program{" "}
                     <span class="nowrap ArialBold txtPrimary">
                       Mon-Fri at{" "}

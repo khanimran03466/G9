@@ -3802,3 +3802,6 @@ a:hover {
   top: 0;
 }
 
+.mobHide.active {
+  display: none !important;
+}
