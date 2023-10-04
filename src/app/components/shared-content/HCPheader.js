@@ -143,7 +143,7 @@ const HCPheader = () => {
                       </Link>
                     </div>
                     <div
-                      className={`text-right px-2 pl-5 mfs12_mlh15 pt-2 mb-0 ${
+                      className={`text-right px-2 pl-5 mfs12_mlh15 pt-2 mb-0  ${
                         pathName == "/hcc" ? "mainActive" : ""
                       }`}
                       id="mobileHeaderTwo"
@@ -308,7 +308,7 @@ const HCPheader = () => {
                           Prescribing Information |
                         </Link>
                       </span>
-                      <span className="pr-4">
+                      <span className="pr-4 pl-1">
                         <Link
                           data-design-category="top_nav_vd"
                           role="link"

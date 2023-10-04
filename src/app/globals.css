@@ -3797,3 +3797,8 @@ a:hover {
 
 }
 
+.stickyHeader {
+  position: sticky;
+  top: 0;
+}
+
